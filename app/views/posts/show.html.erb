@@ -9,3 +9,7 @@
 <ul>
   <%= render @post.comments %>
 </ul>
+<%= form_with(model: [ @post, @post.comments.build ], local: true) do |f| %>
+  <%= f.text_area :body, placeholder: "Add a comment..." %>
+  <%= f.submit "Submit Comment" %>
+<% end %>
