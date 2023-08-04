@@ -1,0 +1,19 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+<br>
+<hr>
+<h3>Posts</h3>
+<% @posts.each do |post| %>
+  <p><%= post.title%> <%= link_to 'Show', post %> | Has <%= post.comments.size %> comments</p>
+<% end %>
+<hr>
+<h3>Links</h3>
+<% @links.each do |link| %>
+  <p><%= link_to truncate(link.url, length: 20),  link.url, target: :_blank %> | <%= link_to 'Show', link %> | Has <%= link.comments.size %> comments</p>
+<% end %>
+<hr>
+<h3>Images</h3>
+<% @images.each do |image| %>
+  <p> <%= image_tag image.url, style: 'height: 150px; width:auto;' %>| <%= link_to 'Show', image %> | Has <%= image.comments.size %> comments</p>
+<% end %>
+<hr>
